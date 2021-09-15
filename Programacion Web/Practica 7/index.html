@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!--
+
+    Carlos Adrian Ayala Gonzalez
+    18300497
+    7A1
+
+-->
+<html lang="en">
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Practica 7</title>
+  <style media="screen">
+	   .azulintenso{
+	     background-color: blue;
+	   }
+
+	   /* tables */
+	table.tablesorter td {
+	   font-size: 8pt !important;
+	}
+
+	table.tablesorter {
+	   font-family:arial;
+	   background-color: #CDCDCD;
+	   margin:0;
+	   font-size: 8pt !important;
+	   width: 100%;
+	   text-align: left;
+	   float: left;
+	}
+	table.tablesorter thead tr th, table.tablesorter tfoot tr th,table.tablesorter th {
+	   background-color: orange;  /*rgb(206,27,35);*/
+	   border: 1px solid black;
+	   color: white;
+	   font-size: 8pt !important;
+	   padding: 4px;
+	}
+	table.tablesorter thead tr .header {
+	   background-image: url(bg.gif);
+	   background-repeat: no-repeat;
+	   background-position: center right;
+	   cursor: pointer;
+	}
+	table.tablesorter tbody td {
+	   color: black;
+	   padding: 4px;
+	   /*background-color: #FFF;*/
+	   vertical-align: top;
+	}
+	table.tablesorter tbody tr.odd td {
+	   /*background-color:#F0F0F6;*/
+	   background-color:#E4232F;
+	}
+	table.tablesorter thead tr .headerSortUp {
+	   background-image: url(asc.gif);
+	}
+	table.tablesorter thead tr .headerSortDown {
+	   background-image: url(desc.gif);
+	}
+	table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+	/*background-color: #8dbdd8;*/
+	background-color: #1c94c4; /*rgb(156,7,15);*/
+	}
+
+	table.totales{
+	   font-family:arial;
+	   background-color: #CDCDCD;
+	   margin:10px 0pt 15px;
+	   font-size: 8pt !important;
+	   text-align: center;
+	}
+
+	table.totales th{
+	   background-color: rgb(206,27,35);
+	   border: 1px solid black;
+	   color: white;
+	   font-size: 8pt !important;
+	   padding: 4px;
+	}
+
+	table.totales td {
+	   color: black;
+	   padding: 4px;
+	   background-color: #FFF;
+	   font-size: 8pt !important;
+	   padding: 4px;
+	   width: 200px;
+	}
+
+
+	/* tablesorter sf */
+	table.tablesortersf td {
+	   font-size: 8pt !important;
+	}
+
+	table.tablesortersf {
+	   font-family:arial;
+	   background-color: #CDCDCD;
+	   margin:10px 0pt 15px;
+	   font-size: 8pt !important;
+	   width: 100%;
+	   text-align: left;
+	   color: white;
+	}
+	table.tablesortersf thead tr th, table.tablesortersf tfoot tr th {
+	   /*background-color:#1c94c4;*/
+	   background-color: #1569C7;
+	  /*background-color: #e6EEEE;*/
+	   border: 1px solid #FFF;
+	   font-size: 8pt !important;
+	   padding: 4px;
+	}
+	table.tablesortersf thead tr .header {
+	   background-image: url(bg.gif);
+	   background-repeat: no-repeat;
+	   background-position: center right;
+	   cursor: pointer;
+	}
+	table.tablesortersf tbody td {
+	   color: #3D3D3D;
+	   padding: 4px;
+	 /*  background-color: #FFF; */
+	   vertical-align: top;
+	}
+	table.tablesortersf tbody tr.odd td {
+	   /*background-color:#F0F0F6;*/
+	   background-color:#145C8F;
+	}
+	table.tablesortersf thead tr .headerSortUp {
+	   background-image: url(asc.gif);
+	}
+	table.tablesortersf thead tr .headerSortDown {
+	   background-image: url(desc.gif);
+	}
+	table.tablesortersf thead tr .headerSortDown, table.tablesortersf thead tr .headerSortUp {
+	background-color: orange;
+	}
+  .gris {
+    background: #BBBBBB !important;
+}
+
+	</style>
+
+</head>
+<body>
+  <!--
+
+            HORARIO DE CLASES
+
+  -->
+	<table border="1" cellpadding="5" cellspacing="0" style="font-size:10px;" width="100%">
+		<tbody>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">Hora</td>
+				<td align="center" class="azulintenso" height="20" width="15%"><font color="white">Lunes</font></td>
+				<td align="center" class="azulintenso" height="20" width="15%"><font color="white">Martes</font></td>
+				<td align="center" class="azulintenso" height="20" width="15%"><font color="white">Miercoles</font></td>
+				<td align="center" class="azulintenso" height="20" width="15%"><font color="white">Jueves</font></td>
+				<td align="center" class="azulintenso" height="20" width="15%"><font color="white">Viernes</font></td>
+				<td align="center" class="azulintenso" height="20" width="15%"><font color="white">Sabado</font></td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">7:30 - 8:20</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROYECTO INTEGRADOR DE DESARROLLO DE SOFTWARE I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SERVICIOS DE RED Y CÓMPUTO NUBE</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN AVANZADA I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 16</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS DE MEDICIÓN Y CONTROL</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A208- AULA</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">8:20 - 9:10</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROYECTO INTEGRADOR DE DESARROLLO DE SOFTWARE I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SERVICIOS DE RED Y CÓMPUTO NUBE</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS EMBEBIDOS II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN AVANZADA I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 16</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS DE MEDICIÓN Y CONTROL</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A208- AULA</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">9:10 - 10:00</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">EMPRENDIMIENTO I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A203-Aula</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS EMBEBIDOS II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">EMPRENDIMIENTO I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A203-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">INGLÉS VII</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A203-Aula</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">Receso</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROYECTO INTEGRADOR DE DESARROLLO DE SOFTWARE I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">Vida Saludable</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">C</span><br>
+				Salon: <span style="color:#FFFFFF;">C109 - Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN WEB I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN WEB I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A205- SALA DE COMPUTO</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">10:50 - 11:40</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">INGLÉS VII</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A203-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROYECTO INTEGRADOR DE DESARROLLO DE SOFTWARE I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROBABILIDAD Y ESTADÍSTICA</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-6A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A201-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN WEB I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN WEB I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A205- SALA DE COMPUTO</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">11:40 - 12:30</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">INGLÉS VII</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A203-Aula</span> <span style="color:#1569C7; font-size:12px;">PROBABILIDAD Y ESTADÍSTICA</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-6A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A201-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SERVICIOS DE RED Y CÓMPUTO NUBE</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS DE MEDICIÓN Y CONTROL</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span> <span style="color:#1569C7; font-size:12px;">PROBABILIDAD Y ESTADÍSTICA</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-6A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A201-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SERVICIOS DE RED Y CÓMPUTO NUBE</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN MÓVIL II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A205- SALA DE COMPUTO</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">12:30 - 13:20</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">ORIENTACION Y TUTORIA</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">C</span><br>
+				Salon: <span style="color:#FFFFFF;">C101 - Aula</span> <span style="color:#1569C7; font-size:12px;">PROBABILIDAD Y ESTADÍSTICA</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-6A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A201-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SERVICIOS DE RED Y CÓMPUTO NUBE</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS DE MEDICIÓN Y CONTROL</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SERVICIOS DE RED Y CÓMPUTO NUBE</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN MÓVIL II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A205- SALA DE COMPUTO</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">13:20 - 14:10</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">EMPRENDIMIENTO I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A203-Aula</span> <span style="color:#1569C7; font-size:12px;">PROBABILIDAD Y ESTADÍSTICA</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-6A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A201-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN MÓVIL II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS EMBEBIDOS II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A207- AULA</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN AVANZADA I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">C</span><br>
+				Salon: <span style="color:#FFFFFF;">C207 - Aula</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">14:10 - 15:00</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">EMPRENDIMIENTO I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A203-Aula</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN MÓVIL II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">AULA VIRTUAL 19</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">SISTEMAS EMBEBIDOS II</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">A</span><br>
+				Salon: <span style="color:#FFFFFF;">A207- AULA</span></td>
+				<td align="center" class="gris" height="20" width="15%"><span style="color:#1569C7; font-size:12px;">PROGRAMACIÓN AVANZADA I</span><br>
+				Grupo: <span style="color:#FFFFFF;">T-7A1</span><br>
+				Edificio: <span style="color:#FFFFFF;">C</span><br>
+				Salon: <span style="color:#FFFFFF;">C207 - Aula</span></td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">15:00 - 15:50</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">15:50 - 16:40</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#EEEEEE" height="20" width="15%">16:40 - 17:30</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+				<td align="center" height="20" width="15%">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+<!--
+
+          TIRA DE MATERIAS
+
+-->
+
+<table class="tablesortersf tablesorter tablesorter-default" role="grid" style="width: 700px;text-align: center;">
+  <thead>
+    <tr class="tablesorter-headerRow" role="row">
+      <th aria-disabled="false" aria-label="CLAVE: No sort applied, activate to apply an ascending sort" aria-sort="none" class="tablesorter-header tablesorter-headerUnSorted" data-column="1" role="columnheader" scope="col" style="user-select: none;" tabindex="0">
+        <div class="tablesorter-header-inner">
+          CLAVE
+        </div>
+      </th>
+      <th aria-disabled="false" aria-label="MATERIA: No sort applied, activate to apply an ascending sort" aria-sort="none" class="tablesorter-header tablesorter-headerUnSorted" data-column="2" role="columnheader" scope="col" style="user-select: none;" tabindex="0">
+        <div class="tablesorter-header-inner">
+          MATERIA
+        </div>
+      </th>
+      <th aria-disabled="false" aria-label="DIV. DE LA MAT.: No sort applied, activate to apply an ascending sort" aria-sort="none" class="tablesorter-header tablesorter-headerUnSorted" data-column="3" role="columnheader" scope="col" style="user-select: none;" tabindex="0">
+        <div class="tablesorter-header-inner">
+          Aula
+        </div>
+      </th>
+      <th aria-disabled="false" aria-label="PROFESOR: No sort applied, activate to apply an ascending sort" aria-sort="none" class="tablesorter-header tablesorter-headerUnSorted" data-column="4" role="columnheader" scope="col" style="user-select: none;" tabindex="0">
+        <div class="tablesorter-header-inner">
+          PROFESOR
+        </div>
+      </th>
+      <th aria-disabled="false" aria-label="GRUPO: No sort applied, activate to apply an ascending sort" aria-sort="none" class="tablesorter-header tablesorter-headerUnSorted" data-column="5" role="columnheader" scope="col" style="user-select: none;" tabindex="0">
+        <div class="tablesorter-header-inner">
+          Enlace
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody aria-live="polite" aria-relevant="all">
+    <tr class="zebra">
+      <td>18MDEMCC0731</td>
+      <td>EMPRENDIMIENTO I</td>
+      <td>A203-Aula</td>
+      <td>MORAN MARQUEZ ADRIANA</td>
+      <td><A HREF="meet.google.com/adv-donp-umu"> Enlace </A></td>
+    </tr>
+    <tr class="zebra">
+      <td>18MPEDS0730</td>
+      <td>SISTEMAS DE MEDICIÓN Y CONTROL</td>
+      <td>AULA VIRTUAL 19</td>
+      <td>CHAVEZ PLASCENCIA ULISES ENRIQUE</td>
+      <td>NO DISPONIBLE</td>
+    </tr>
+    <tr class="zebra">
+      <td>18MPEDS0728</td>
+      <td>SERVICIOS DE RED Y CÓMPUTO NUBE</td>
+      <td>AULA VIRTUAL 19</td>
+      <td>CORTES AGUILAR MARCELA OLIVIA</td>
+      <td>NO DISPONIBLE</td>
+    </tr>
+    <tr class="zebra">
+      <td>18MPEDS0729</td>
+      <td>SISTEMAS EMBEBIDOS II</td>
+      <td>A207- AULA</td>
+      <td>GONZÃLEZ VÃSQUEZ ANA ELIZABETH</td>
+      <td>NO DISPONIBLE</td>
+    </tr>
+    <tr class="zebra">
+      <td>18MPEDS0726</td>
+      <td>PROGRAMACIÓN WEB I</td>
+      <td>AULA VIRTUAL 19</td>
+      <td>PINTO GARCIA MONSERRAT</td>
+      <td>NO DISPONIBLE</td>
+    </tr>
+    <tr class="zebra">
+      <td>18MPEDS0724</td>
+      <td>PROGRAMACIÓN MÓVIL II</td>
+      <td>A205- SALA DE COMPUTO</td>
+      <td>MARTINEZ RANGEL PEDRO ULISES</td>
+      <td><A HREF="meet.google.com/aju-gzer-vsx"> Enlace </A></td>
+    </tr>
+    <tr class="zebra">
+      <td>18MPEDS0727</td>
+      <td>PROYECTO INTEGRADOR DE DESARROLLO DE SOFTWARE I</td>
+      <td>AULA VIRTUAL 19</td>
+      <td>RODRIGUEZ ALVAREZ PEDRO</td>
+      <td><A HREF="meet.google.com/aju-gzer-vsx"> Enlace </A></td>
+    </tr>
+    <tr class="zebra">
+      <td>18MPEDS0725</td>
+      <td>PROGRAMACIÓN AVANZADA I</td>
+      <td>C207 - Aula</td>
+      <td>UREÑA ZAPATA CLAUDIA</td>
+      <td>NO DISPONIBLE</td>
+    </tr>
+    <tr class="zebra">
+      <td>18MDEMCC0732</td>
+      <td>INGLÉS VII</td>
+      <td>AULA VIRTUAL 19</td>
+      <td>LEYVA UZON ALEXANDER</td>
+      <td><A HREF="meet.google.com/tgz-ypcc-twt"> Enlace </A></td>
+    </tr>
+    <tr class="zebra">
+      <td>TUT201</td>
+      <td>ORIENTACION Y TUTORIA</td>
+      <td>C101 - Aula</td>
+      <td>GONZALEZ ZAPATA ABRAHAM</td>
+      <td>NO DISPONIBLE</td>
+    </tr>
+    <tr class="zebra">
+      <td>18MDEMT0627</td>
+      <td>PROBABILIDAD Y ESTADÍSTICA</td>
+      <td>A201-Aula</td>
+      <td>DEL VALLE CRUZ VALERIA ELIZABETH</td>
+      <td>N/A</td>
+    </tr>
+    <tr class="zebra">
+      <td>EXT1504</td>
+      <td>Vida Saludable</td>
+      <td>AULA VIRTUAL 19</td>
+      <td>RESENDIZ LÓPEZ MANUEL IGNACIO</td>
+      <td><A HREF="meet.google.com/wrs-jptg-yke"> Enlace </A></td>
+    </tr>
+  </tbody>
+</table>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+	</script>
+</body>
+</html>
