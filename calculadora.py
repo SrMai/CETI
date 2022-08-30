@@ -16,22 +16,34 @@ def menu():
     print("Escoja una opción.")
     
     operacion = input("")
-    os.system("cls")
+    os.system("clear")
     print("Escribe el número 1.")
     numero1 = input("")
     print("Escribe el número 2.")
     numero2 = input("")
-    operaciones(operacion, numero1, numero2)
+    operaciones(operacion, int(numero1), int(numero2))
 
 def operaciones(operacion, numero1, numero2):
     if operacion == '1':#Suma
-        return numero1+numero2
+        print ("Suma: ")
+        print(str(numero1)+"+"+str(numero2))
+        print("=")
+        print (numero1+numero2)
     elif operacion == '2':#Resta
-        return numero1-numero2
-    elif operacion == '2':#Multiplicación
-        return numero1*numero2
-    elif operacion == '2':#División
-        return numero1/numero2
+        print ("Resta: ")
+        print(str(numero1)+"-"+str(numero2))
+        print("=")
+        print (numero1-numero2)
+    elif operacion == '3':#Multiplicación
+        print ("Multiplicación: ")
+        print(str(numero1)+"*"+str(numero2))
+        print("=")
+        print (numero1*numero2)
+    elif operacion == '4':#División
+        print ("División: ")
+        print(str(numero1)+"/"+str(numero2))
+        print("=")
+        print (numero1/numero2)
     
 menu()
 #if '*' in opcion:
