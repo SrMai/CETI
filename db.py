@@ -28,34 +28,35 @@ con = conexionSql()
 
 def crearTablaSustancia(con):
     cursorObj = con.cursor()
-    cursorObj.executemany("CREATE TABLE IF NOT EXISTS sustancia(id integer PRIMARY KEY AUTOINCREMENT, name REAL)")
+    cursorObj.execute("CREATE TABLE IF NOT EXISTS sustancia(id integer PRIMARY KEY AUTOINCREMENT, name REAL)")
     con.commit()
 
 def crearTablaMedicamento(con):
     cursorObj = con.cursor()
-    cursorObj.exeute("CREATE TABLE IF NOT EXISTS medicamento(id integer PRIMARY KEY AUTOINCREMENT, id_sustancia integer, name text, FOREING KEY(id_sustancia) REFERENCES person(id))")
+    cursorObj.execute("CREATE TABLE IF NOT EXISTS sustancia(id integer PRIMARY KEY AUTOINCREMENT, name REAL)")
+    cursorObj.execute("CREATE TABLE IF NOT EXISTS medicamento(id integer PRIMARY KEY AUTOINCREMENT, id_sustancia integer, name text, FOREING KEY(id_sustancia) REFERENCES person(id))")
     con.commit()
 
 def insertarSustancia(con, datos):
     cursorObj = con.cursor()
-    cursorObj.exeute("INSERT INTO sustancia(name) VALUES(?)", [datos])
+    cursorObj.execute("INSERT INTO sustancia(name) VALUES(?)", [datos])
     con.commit()
 
 def insertarMedicamento(con, datos):
     cursorObj = con.cursor()
-    cursorObj.exeute("INSERT INTO medicamento(id_sustancia, name) VALUES(?,?)", datos)
+    cursorObj.execute("INSERT INTO medicamento(id_sustancia, name) VALUES(?,?)", [datos])
     con.commit()
 
 def mostrarSustancia(con):
     cursorObj = con.cursor()
-    cursorObj.exeute("SELECT * FROM sustancia")
+    cursorObj.execute("SELECT * FROM sustancia")
     rows= cursorObj.fetchall()
     for row in rows:
         print(row)
 
 def mostrarMedicamento(con):
     cursorObj = con.cursor()
-    cursorObj.exeute("SELECT * FROM medicamento")
+    cursorObj.execute("SELECT * FROM medicamento")
     rows= cursorObj.fetchall()
     for row in rows:
         print(row)
