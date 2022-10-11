@@ -33,9 +33,13 @@ def crearTablaSustancia(con):
 
 def crearTablaMedicamento(con):
     cursorObj = con.cursor()
-    cursorObj.execute("CREATE TABLE IF NOT EXISTS sustancia(id integer PRIMARY KEY AUTOINCREMENT, name REAL)")
-    cursorObj.execute("CREATE TABLE IF NOT EXISTS medicamento(id integer PRIMARY KEY AUTOINCREMENT, id_sustancia integer, name text, FOREING KEY(id_sustancia) REFERENCES person(id))")
+    cursorObj.execute("CREATE TABLE IF NOT EXISTS medicamento(id integer PRIMARY KEY AUTOINCREMENT, name REAL)")
     con.commit()
+
+#def crearTablaMedicamento(con):
+#    cursorObj = con.cursor()
+#    cursorObj.execute("CREATE TABLE IF NOT EXISTS medicamento(id integer PRIMARY KEY AUTOINCREMENT, id_sustancia integer, name text, FOREING KEY(id_sustancia))")
+#    con.commit()
 
 def insertarSustancia(con, datos):
     cursorObj = con.cursor()
@@ -44,8 +48,13 @@ def insertarSustancia(con, datos):
 
 def insertarMedicamento(con, datos):
     cursorObj = con.cursor()
-    cursorObj.execute("INSERT INTO medicamento(id_sustancia, name) VALUES(?,?)", [datos])
+    cursorObj.execute("INSERT INTO medicamento(name) VALUES(?)", [datos])
     con.commit()
+
+#def insertarMedicamento(con, datos):
+#    cursorObj = con.cursor()
+#    cursorObj.execute("INSERT INTO medicamento(id_sustancia, name) VALUES(?,?)", [datos])
+#    con.commit()
 
 def mostrarSustancia(con):
     cursorObj = con.cursor()
@@ -63,7 +72,7 @@ def mostrarMedicamento(con):
 
 while True:
     try:
-        op=input("Ingresa la opcion a ejecutar\n\nA) Agregar sustancia\nB) Agregar Medicamento\nC) Mostrar Sustancia\nD)Mostrar Medicamento")
+        op=input("Ingresa la opcion a ejecutar\n\nA) Agregar sustancia\nB) Agregar Medicamento\nC) Mostrar Sustancia\nD) Mostrar Medicamento \n-->")
     except KeyError:
         print("Utiliza caracteres Alfabeticos")
 
